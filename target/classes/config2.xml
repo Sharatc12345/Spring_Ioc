@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <bean class="com.example.collection.Students" name="s1">
+    <property name="id"><value>101</value></property>
+    <property name="name"><value>Sanvi</value></property>
+    </bean>
+    <bean class="com.example.collection.Students" name="s2">
+    <property name="id"><value>102</value></property>
+    <property name="name"><value>Suhas</value></property>
+    </bean>
+    <bean class="com.example.collection.Students" name="s3">
+    <property name="id"><value>103</value></property>
+    <property name="name"><value>Shridhar</value></property>
+    </bean>
+    <!-- add values using list-->
+   <!-- <bean class="com.example.collection.College" name="c1">
+    <property name="id"><value>101</value></property>
+    <property name="name"><value>vsm</value></property>
+    <property name="std">
+    <list>
+    <ref bean="s1"/>
+    <ref bean="s2"/>
+    <ref bean="s3"/>
+    </list>
+    </property>
+    </bean> --> 
+    
+    <!-- add values using Set-->
+    <!-- <bean class="com.example.collection.College" name="c1">
+    <property name="id"><value>101</value></property>
+    <property name="name"><value>vsm</value></property>
+    <property name="std">
+    <set>
+    <ref bean="s1"/>
+    <ref bean="s2"/>
+    <ref bean="s3"/>
+    </set>
+    </property>
+    </bean>-->
+    <!--Add values using Map-->
+    <bean class="com.example.collection.College" name="c1">
+    <property name="id"><value>101</value></property>
+    <property name="name"><value>vsm</value></property>
+    <property name="std">
+    <map>
+	    <entry key="101" value-ref="s1"></entry>
+	    <entry key="102" value-ref="s2"></entry>
+	    <entry key="103" value-ref="s3"></entry>
+    </map>
+    </property>
+    </bean>
+    
+ </beans>
